@@ -14,17 +14,36 @@
 vagrant plugin install vagrant-hostmanager
 ```
 
+## Setups
+
+ * [debian][4]
+ * [ubuntu][5]
+
+## Software projects
+
+ * [bolt2][6]
+ * [contao3][7]
+ * [symfony2][8]
+
 ## Troubleshooting
 
- * [all platforms][4]
- * [linux][5]
- * [osx][6]
- * [windows][7]
+ * [all platforms][9]
+ * [linux][10]
+ * [osx][11]
+ * [windows][12]
 
 [1]: installation/linux.md
 [2]: installation/osx.md
 [3]: installation/windows.md
-[4]: troubleshooting/allplatforms.md
-[5]: troubleshooting/linux.md
-[6]: troubleshooting/osx.md
-[7]: troubleshooting/windows.md
+
+[4]: https://github.com/vagrant-php/debian
+[5]: https://github.com/vagrant-php/ubuntu
+
+[6]: https://github.com/vagrant-php/create-bolt2-project
+[7]: https://github.com/vagrant-php/create-contao3-project
+[8]: https://github.com/vagrant-php/create-symfony2-project
+
+[9]: troubleshooting/allplatforms.md
+[10]: troubleshooting/linux.md
+[11]: troubleshooting/osx.md
+[12]: troubleshooting/windows.md
