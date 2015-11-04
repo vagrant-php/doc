@@ -6,6 +6,14 @@
 Use `.deb` for Debian based distributions as, Debian, elementary OS, Linux Mint, Ubuntu.
 Use `.rpm` for Fedora, Mageia, OpenSUSE etc.
 
+### Plugin
+
+#### Hostmanager
+
+```{.sh}
+vagrant plugin install vagrant-hostmanager
+```
+
 ## Provider
 
 You need at least one of this providers to use vagrant-php.

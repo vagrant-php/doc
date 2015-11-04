@@ -4,6 +4,14 @@
 
 [Download][1] and install the newest version of vagrant.
 
+### Plugin
+
+#### Hostmanager
+
+```{.sh}
+vagrant plugin install vagrant-hostmanager
+```
+
 ## Provider
 
 You need at least one of this providers to use vagrant-php.
