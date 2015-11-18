@@ -15,14 +15,16 @@
 
  * [bolt2][6]
  * [contao3][7]
- * [symfony2][8]
+ * [drupal7][8]
+ * [lavarel5][9]
+ * [symfony2][10]
 
 ## Troubleshooting
 
- * [all platforms][9]
- * [linux][10]
- * [osx][11]
- * [windows][12]
+ * [all platforms][11]
+ * [linux][12]
+ * [osx][13]
+ * [windows][14]
 
 [1]: installation/linux.md
 [2]: installation/osx.md
@@ -33,9 +35,11 @@
 
 [6]: https://github.com/vagrant-php/create-bolt2-project
 [7]: https://github.com/vagrant-php/create-contao3-project
-[8]: https://github.com/vagrant-php/create-symfony2-project
+[8]: https://github.com/vagrant-php/create-drupal7-project
+[9]: https://github.com/vagrant-php/create-lavarel5-project
+[10]: https://github.com/vagrant-php/create-symfony2-project
 
-[9]: troubleshooting/allplatforms.md
-[10]: troubleshooting/linux.md
-[11]: troubleshooting/osx.md
-[12]: troubleshooting/windows.md
+[11]: troubleshooting/allplatforms.md
+[12]: troubleshooting/linux.md
+[13]: troubleshooting/osx.md
+[14]: troubleshooting/windows.md
