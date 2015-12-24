@@ -76,15 +76,16 @@ Create a file at `/etc/sudoers.d/vagrant` with the following content:
 ```
 # vagrant-nfs
 Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
+Cmnd_Alias VAGRANT_EXPORTS_COPY = /bin/cp /tmp/exports /etc/exports
 Cmnd_Alias VAGRANT_NFSD_CHECK = /etc/init.d/nfs-kernel-server status
 Cmnd_Alias VAGRANT_NFSD_START = /etc/init.d/nfs-kernel-server start
 Cmnd_Alias VAGRANT_NFSD_APPLY = /usr/sbin/exportfs -ar
-Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /etc/exports
+Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /tmp/exports
 
 # vagrant-hostmanager
 Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp /home/*/.vagrant.d/tmp/hosts.local /etc/hosts
 
-%vagrant ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE, VAGRANT_HOSTMANAGER_UPDATE
+%vagrant ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE, VAGRANT_EXPORTS_COPY, VAGRANT_HOSTMANAGER_UPDATE
 ```
 
 #### Fedora
