@@ -32,6 +32,10 @@ SHUTDOWN_USERS="<username1> <username2>"
 SHUTDOWN=savestate
 ```
 
+```{.sh}
+vagrant plugin install vagrant-vbguest
+```
+
 ### VMWare
 
 [Download][3] and install the newest version of vmware workstation.

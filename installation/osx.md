@@ -20,6 +20,10 @@ You need at least one of this providers to use vagrant-php.
 
 [Download][2] and install the newest version of virtualbox and virtualBox extension pack.
 
+```{.sh}
+vagrant plugin install vagrant-vbguest
+```
+
 ### VMWare
 
 [Download][3] and install the newest version of vmware fusion.
