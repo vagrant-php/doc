@@ -89,7 +89,7 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /tmp/exports
 %vagrant ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE, VAGRANT_EXPORTS_COPY
 
 # vagrant-hostmanager
-Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp <home-directory>/.vagrant.d/tmp/hosts.local /etc/hosts
+Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp /home/*/.vagrant.d/tmp/hosts.local /etc/hosts
 
 %vagrant ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE                                                 
 ```
@@ -127,7 +127,7 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /tmp/exports
 %vagrant ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE
 
 # vagrant-hostmanager
-Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp <home-directory>/.vagrant.d/tmp/hosts.local /etc/hosts
+Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp /home/*/.vagrant.d/tmp/hosts.local /etc/hosts
 
 %vagrant ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE
 ```
