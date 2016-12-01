@@ -77,7 +77,7 @@ adduser <username> vagrant
 
 Create a file at `/etc/sudoers.d/vagrant` with the following content:
 
-```
+```{.sh}
 # vagrant-nfs
 Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
 Cmnd_Alias VAGRANT_EXPORTS_COPY = /bin/cp /tmp/exports /etc/exports
@@ -91,8 +91,7 @@ Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /tmp/exports
 # vagrant-hostmanager
 Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp <home-directory>/.vagrant.d/tmp/hosts.local /etc/hosts
 
-%vagrant ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE
-~                                                     
+%vagrant ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE                                                 
 ```
 
 #### Fedora
