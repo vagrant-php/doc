@@ -14,6 +14,16 @@ Use `.rpm` for Fedora, Mageia, OpenSUSE etc.
 vagrant plugin install vagrant-hostmanager
 ```
 
+##### Passwordless usage
+
+Create a file at `/etc/sudoers.d/vagrant-hostmanager` with the following content:
+
+```{.sh}
+Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp /home/*/.vagrant.d/tmp/hosts.local /etc/hosts
+
+%vagrant ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE                                                 
+```
+
 ## Provider
 
 You need at least one of this providers to use vagrant-php.
@@ -75,10 +85,9 @@ Add each user you uses vagrant to the vagrant group
 adduser <username> vagrant
 ```
 
-Create a file at `/etc/sudoers.d/vagrant` with the following content:
+Create a file at `/etc/sudoers.d/vagrant-nfs` with the following content:
 
 ```{.sh}
-# vagrant-nfs
 Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
 Cmnd_Alias VAGRANT_EXPORTS_COPY = /bin/cp /tmp/exports /etc/exports
 Cmnd_Alias VAGRANT_NFSD_CHECK = /etc/init.d/nfs-kernel-server status
@@ -86,12 +95,7 @@ Cmnd_Alias VAGRANT_NFSD_START = /etc/init.d/nfs-kernel-server start
 Cmnd_Alias VAGRANT_NFSD_APPLY = /usr/sbin/exportfs -ar
 Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /tmp/exports
 
-%vagrant ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE, VAGRANT_EXPORTS_COPY
-
-# vagrant-hostmanager
-Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp /home/*/.vagrant.d/tmp/hosts.local /etc/hosts
-
-%vagrant ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE                                                 
+%vagrant ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE, VAGRANT_EXPORTS_COPY                                               
 ```
 
 #### Fedora
@@ -114,10 +118,9 @@ Add each user you uses vagrant to the vagrant group
 adduser <username> vagrant
 ```
 
-Create a file at `/etc/sudoers.d/vagrant` with the following content:
+Create a file at `/etc/sudoers.d/vagrant-nfs` with the following content:
 
 ```
-# vagrant-nfs
 Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
 Cmnd_Alias VAGRANT_NFSD_CHECK = /usr/bin/systemctl status --no-pager nfs-server.service
 Cmnd_Alias VAGRANT_NFSD_START = /usr/bin/systemctl start nfs-server.service
@@ -125,11 +128,6 @@ Cmnd_Alias VAGRANT_NFSD_APPLY = /usr/sbin/exportfs -ar
 Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /bin/sed -r -e * d -ibak /tmp/exports
 
 %vagrant ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD_CHECK, VAGRANT_NFSD_START, VAGRANT_NFSD_APPLY, VAGRANT_EXPORTS_REMOVE
-
-# vagrant-hostmanager
-Cmnd_Alias VAGRANT_HOSTMANAGER_UPDATE = /bin/cp /home/*/.vagrant.d/tmp/hosts.local /etc/hosts
-
-%vagrant ALL=(root) NOPASSWD: VAGRANT_HOSTMANAGER_UPDATE
 ```
 
 #### Mageia
